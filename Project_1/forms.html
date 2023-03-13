@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>forms</title>
+	<style type="text/css">
+		body{
+			background: gold;
+		}
+		#logo{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+		}
+		.header{
+			margin-top: 80px;
+			text-align: center;
+		}
+		#application_form{
+			background-color: whitesmoke;
+			clear: both;
+			margin-top: 50px;
+			width: 50%;
+			line-height: 150%;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 1.7em;
+		}
+		.labels{
+			margin: 8px;
+		}
+		#comment{
+			width: 300px;
+		}
+		#submit{
+			background-color: lightgreen;
+			width: 50%;
+			height: 30px;
+			font-size: 24px;
+			text-transform: capitalize;
+
+		}
+
+		.submit{
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">	
+		<div id="logo">
+			<img src="./1logo.jpg">
+		</div>
+		<header class="header">
+			<h1>School application form</h1>
+		</header>
+		<form id="application_form">
+			<div class="labels">
+				<label for="name">Enter your name</label>
+				<input type="text" name="name">
+			</div>
+			<div class="labels">
+				<label for="age">Age</label>
+				<input type="text" name="age">
+			</div>
+			<label class="labels">Gender</label>	
+			<div class="labels">
+				<input type="radio" name="gender" value="male">
+				<label for="male">Male</label>
+			</div>
+			<div class="labels">
+				<input type="radio" name="gender" value="female">
+				<label for="female">Female</label>
+			</div>
+			<div class="labels">
+				<input type="radio" name="gender" value="rather_not_say">
+				<label for="rather_not_say">Rather not say</label>
+			</div>
+			<div class="labels">
+				<label for="tel">Phone no:</label>
+				<input type="text" name="title">
+			</div>
+			<div class="labels">
+				<label for="email">Email</label>
+				<input type="email" name="email" placeholder="Enter your Email">
+			</div>
+
+			<label class="labels">What are your interests ? <small>(You can choose more than one)</small></label>
+
+			<div class="labels">
+				<input type="checkbox" name="football">
+				<label for="football">Football</label>
+			</div>
+			<div class="labels">
+				<input type="checkbox" name="gym">
+				<label for="gym">Gym</label>
+			</div>
+			<div class="labels">
+				<input type="checkbox" name="rugby">
+				<label for="rugby">Rugby</label>
+			</div>
+			<div class="labels">
+				<input type="checkbox" name="athletics">
+				<label for="athletics">Athletics</label>
+			</div>
+			<div class="labels">
+				<input type="checkbox" name="others">
+				<label for="others">Others</label>
+			</div>
+
+			<div class="labels">	
+				<label>Any comments or Suggestion</label><br>
+				<textarea name="comment" id="comment" placeholder="Enter your comment here"></textarea>
+			</div>
+			<div class="submit">
+				<input type="submit" name="submit" value="submit" id="submit">
+			</div>
+
+
+
+
+		</form>
+	</div>
+
+
+
+</body>
+</html>
