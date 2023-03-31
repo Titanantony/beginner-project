@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator Project</title>
+	<style>
+		html,body{
+			height: 100%;
+			margin: 0px;
+
+		}
+		.heading{
+			justify-self: flex-start;
+			align-self: center;
+		}
+		.main_content{
+			background: #504d48;
+			border-radius: 25px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			overflow: hidden;
+			
+
+		}
+		.display{
+			justify-self: flex-start;
+			margin-bottom: 40px;
+		}
+		#display{
+			width: 80%;
+			height: 40px;
+			background-color: #cfe3e4;
+			margin-left: 30px;
+			margin-right: auto;
+			color: #000000;
+
+		}
+		.input{
+			background-color: #cfe3e4;
+		}
+		.input.text{
+			background-color: #000000;
+
+		}
+		.calculator{
+			width: 100%;
+			height: 50%;
+	
+		}
+		.math_symbols{
+			color: #e4e3df;
+		}
+		.delete{
+			color: #bf4755;
+		}
+		.button{
+			background-color: transparent;
+			border: 2px solid black;
+			border-radius: 10px;
+			box-shadow: 5px 10px 8px rgba(40,37,30,255);
+			margin: auto;
+			width: 15%;
+		}
+		.button:hover{
+			background-color: transparent;
+		}
+		tr{
+			text-align: center;
+		}
+
+		@media(min-width: 400px){
+			html,body{
+				background-color: #d7d5f5;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.main_content{
+				height: 70vh;
+				width: 30vw;
+			}
+
+		}
+		@media(max-width:399.9px){
+			.main_content{
+				height: 100%;
+				width: 100vw;
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<section class="main_content">
+		<h2 class="heading">Calculator</h2>
+		<div class="display" id="display">
+			
+		</div>
+		<table class="calculator">
+			<tr>
+				<td class="math_symbols button">7</td>
+				<td class="math_symbols button">8</td>
+				<td class="math_symbols button">9</td>
+				<td class="delete button">del</td>
+				<td class="delete button">AC</td>
+			</tr>
+			<tr>
+				<td class="math_symbols button">4</td>
+				<td class="math_symbols button">5</td>
+				<td class="math_symbols button">6</td>
+				<td class="math_symbols button">*</td>
+				<td class="math_symbols button">/</td>
+			</tr>
+			<tr>
+				<td class="math_symbols button">1</td>
+				<td class="math_symbols button">2</td>
+				<td class="math_symbols button">3</td>
+				<td class="math_symbols button">+</td>
+				<td class="math_symbols button">-</td>
+			</tr>
+			<tr>
+				<td class="math_symbols button">0</td>
+				<td class="math_symbols button">.</td>
+				<td class="math_symbols button">(</td>
+				<td class="math_symbols button">)</td>
+				<td class="math_symbols button">=</td>
+			</tr>
+
+
+		</table>
+	</section>
+
+
+
+	<script>
+		let display = document.querySelector(".display");
+		let buttons = Array.from(document.getElementsByClassName('button'));
+
+		buttons.map( button =>{
+			button.addEventListener('click', (e) => {
+				// console.log(e.target);
+				// console.log(e.target.innerText);
+				switch(e.target.innerText){
+				case 'AC':
+					display.innerText = '';
+					break;
+				case 'del':
+					if (display.innerText) {
+						display.innerText = display.innerText.slice(0, -1)
+					}
+				case '=':
+					try{
+						display.innerText = eval(display.innerText);
+					} catch {
+						display.innerText = 'Error!';
+					}
+					
+					break;
+				default:
+						display.innerText += e.target.innerText;
+				}
+				
+			})	
+
+		})
+
+	</script>
+</body>
+</html>

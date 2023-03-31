@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.button, .button2{
+			height: 20px;
+			width: 150px;
+			border: 2px solid black;
+			background-color: lightblue;
+			font-weight: 600;
+		}
+
+		.eListeners{
+			width: 100%;
+			height: 400px;
+			
+
+
+		}
+		.reveal{
+			width: 23%;
+			background-color: pink;
+			height: 400px;
+			float: left;
+		}
+		.popup{
+			width: 70%;
+			background-color: lightblue;
+			height: 400px;
+			float: left;
+			margin-left: 10px;
+		}
+
+
+		.popUp{
+			display: none;
+		}
+
+
+		.popUp.reveal{
+			display: block;
+		}
+		
+	</style>
+</head>
+<body>
+<h1>Elderflower</h1>
+<button class="button" onclick="alert('I love programming so much')">I LOVE JAVASCRIPT</button>
+
+<button class="button2">Click me</button>
+
+<button class="btn_3">mouse Over</button>
+<div class="content">
+	<div id="greeting" class="message">
+		hello
+		<span id="name">friend !</span>
+	</div>
+</div>
+
+
+
+<div class="eListeners">
+	<button class="reveal">
+	</button>
+	<div class="popup popUp"></div>
+
+
+</div>
+
+<script type="text/javascript">
+	
+	
+const revealBtn = document.querySelector('.reveal');
+
+const popUp = document.querySelector('.popUp');
+
+function revealContent() {
+
+	if(popUp.classList.contains('reveal') 
+	) {
+		popUp.classList.remove('reveal')
+	} else {
+	 	popUp.classList.add('reveal')
+	}
+}
+
+revealBtn.addEventListener('click', revealContent);
+
+
+
+console.log(window.screen.width);
+
+
+var today = new Date()
+
+console.log(today.toTimeString())
+
+
+// program for a simple calculator
+let result;
+
+// take the operator input
+const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+// take the operand input
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+
+switch(operator) {
+    case '+':
+        result = number1 + number2;
+        console.log(`${number1} + ${number2} = ${result}`);
+        break;
+    case '-':
+        result = number1 - number2;
+        console.log(`${number1} - ${number2} = ${result}`);
+        break;
+    case '*':
+        result = number1 * number2;
+        console.log(`${number1} * ${number2} = ${result}`);
+        break;
+    case '/':
+        result = number1 / number2;
+        console.log(`${number1} / ${number2} = ${result}`);
+        break;
+
+    default:
+        console.log('Invalid operator');
+        break;
+}
+</script>
+</body>
+</html>

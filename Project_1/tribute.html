@@ -9,47 +9,78 @@
 		body,html{
 			height: 100%;
 			margin: 0px;
-			display: flex;
 		}
 		.main_content {
-			height: 100%;
-			width: 65%;
+			height: 75%;
 			background-color: #3d0738;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			
 		}
 		.main img{
 			border-radius: 50%;
 			height: 300px;
 		}
 		.text{
-			width: 30%;
+			width: 80%;
 			margin-left: 15px;
 			color: #f6f0f7;
 		}
 		.header{
-			color: ;
+			color: yellowgreen;
 		}
 		.main{
 			display: flex;
 			justify-content: center;
 
 		}
+		.year{
+			background-color: yellowgreen;
+		}
 
 		.asider{
 			background-color: #e8dbda;
-			width: 35%;
 			text-align: center;
-			height: 100vh;
-			overflow: scroll;
 		}
 		.details{
 			text-align: left;
 		}
-		@media(min-width:720px) and (max-width:920px){
+		
+
+
+
+
+		@media(max-width:719.9px){
+			.main_content{
+				width: 100%;
+			}
+			.main{
+				flex-wrap: wrap;
+			}
+			.subtle{
+				margin-top: 0px;
+			}
+			.asider{
+				width: 100%;
+				text-align: center;
+
+			}
+			.details{
+				text-align: center;
+			}
+
+		}
+
+
+
+		@media(min-width:720px) and (max-width:920.9px){
+			body,html{
+				display: flex;
+			}
 			.main_content{
 				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
 
 			}
 			.main{
@@ -57,9 +88,31 @@
 			}
 			.asider{
 				width: 50%;
+				overflow: scroll;
+				height: 100vh;
 			}
 			.text{
 				width: 80%;
+			}
+		}
+		@media(min-width:921px){
+			body,html{
+				display: flex;
+			}
+			.main_content{
+				width: 65%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+			.text{
+				width: 30%;
+			}
+			.asider{
+				overflow: scroll;
+				width: 35%;
+				height: 100vh;
 			}
 		}
 	</style>
