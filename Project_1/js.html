@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+		.keys {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #7b4397, #dc2430);
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+  margin-top: .5rem;
+  display: block;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+	</style>
+	<title></title>
+</head>
+<body>
+<div class="keys">
+  <div data-key="65" class="key">
+    <kbd>A</kbd>
+    <span class="sound">clap</span>
+  </div>
+  <div data-key="83" class="key">
+    <kbd>S</kbd>
+    <span class="sound">hihat</span>
+  </div>
+  <div data-key="68" class="key">
+    <kbd>D</kbd>
+    <span class="sound">kick</span>
+  </div>
+  <div data-key="70" class="key">
+    <kbd>F</kbd>
+    <span class="sound">openhat</span>
+  </div>
+  <div data-key="71" class="key">
+    <kbd>G</kbd>
+    <span class="sound">boom</span>
+  </div>
+  <div data-key="72" class="key">
+    <kbd>H</kbd>
+    <span class="sound">ride</span>
+  </div>
+  <div data-key="74" class="key">
+    <kbd>J</kbd>
+    <span class="sound">snare</span>
+  </div>
+  <div data-key="75" class="key">
+    <kbd>K</kbd>
+    <span class="sound">tom</span>
+  </div>
+  <div data-key="76" class="key">
+    <kbd>L</kbd>
+    <span class="sound">tink</span>
+  </div>
+</div>
+
+<audio data-key="65" src="sounds/clap.wav"></audio>
+<audio data-key="83" src="sounds/hihat.wav"></audio>
+<audio data-key="68" src="sounds/kick.wav"></audio>
+<audio data-key="70" src="sounds/openhat.wav"></audio>
+<audio data-key="71" src="sounds/boom.wav"></audio>
+<audio data-key="72" src="sounds/ride.wav"></audio>
+<audio data-key="74" src="sounds/snare.wav"></audio>
+<audio data-key="75" src="sounds/tom.wav"></audio>
+<audio data-key="76" src="sounds/tink.wav"></audio>
+
+
+
+<script type="text/javascript">
+	function play
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		input[type="button"] {
+			width: 50px;
+			height: 50px;
+			font-size: 24px;
+		}
+		input[type="text"] {
+			width: 210px;
+			height: 50px;
+			font-size: 24px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tr>
+				<td colspan="4"><input type="text" id="result"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" onclick="addToResult('7')"></td>
+				<td><input type="button" value="8" onclick="addToResult('8')"></td>
+				<td><input type="button" value="9" onclick="addToResult('9')"></td>
+				<td><input type="button" value="+" onclick="addToResult('+')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onclick="addToResult('4')"></td>
+				<td><input type="button" value="5" onclick="addToResult('5')"></td>
+				<td><input type="button" value="6" onclick="addToResult('6')"></td>
+				<td><input type="button" value="-" onclick="addToResult('-')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onclick="addToResult('1')"></td>
+				<td><input type="button" value="2" onclick="addToResult('2')"></td>
+				<td><input type="button" value="3" onclick="addToResult('3')"></td>
+				<td><input type="button" value="*" onclick="addToResult('*')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" onclick="addToResult('0')"></td>
+				<td><input type="button" value="." onclick="addToResult('.')"></td>
+				<td><input type="button" value="C" onclick="clearResult()"></td>
+				<td><input type="button" value="/" onclick="addToResult('/')"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="button" value="=" onclick="calculateResult()"></td>
+			</tr>
+		</table>
+	</center>
+	<script>
+		function addToResult(value) {
+			document.getElementById('result').value += value;
+		}
+
+		function clearResult() {
+			document.getElementById('result').value = '';
+		}
+
+		function calculateResult() {
+			try {
+				document.getElementById('result').value = eval(document.getElementById('result').value);
+			} catch (error) {
+				alert('Invalid input!');
+			}
+		}
+
+
+
+
+// 		// Define variables for input and output
+// let input = "";
+// let output = "";
+
+// // Add event listeners to all calculator buttons
+// document.querySelectorAll(".calc-button").forEach(button => {
+//   button.addEventListener("click", function() {
+//     // Get the button value and update the input
+//     const value = this.dataset.value;
+//     input += value;
+
+//     // Update the output with the evaluated input
+//     try {
+//       output = eval(input);
+//     } catch (error) {
+//       output = "ERROR";
+//     }
+
+//     // Update the display
+//     document.querySelector(".calc-input").textContent = input;
+//     document.querySelector(".calc-output").textContent = output;
+//   });
+// });
+
+	</script>
+</body>
+</html> -->

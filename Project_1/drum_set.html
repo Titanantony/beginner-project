@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DRUMSET PROJECT</title>
+	<style>
+		body,html{
+			box-sizing: border-box;
+			background-image: url("../pics/2.jpg");
+			overflow: hidden;
+			height: 100vh;
+
+		}
+		.keys{
+			height: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-end;
+		}
+
+		.key{
+			text-align: center;
+			height: 35px;
+			width: 70px;
+			background-color: #fc6203;
+			color: #FFF;
+			border: 5px solid red;
+			margin-bottom: 30px;
+			transition: all .07s ease;
+		}
+		.sound {
+			font-size: 1.2rem;
+  			text-transform: capitalize;
+  			color: #ffc600;
+  			margin-top: .5rem;
+  			
+		}
+		.playing{
+			border-color: #D4AF37;
+			transform: scale(1.2);
+
+		}
+		kbd{
+			display: block;
+			font-weight: 600;
+			font-size: 1.2em;
+			color: #000;
+		}
+
+		@media(max-widh: 400px){
+			
+		}
+	</style>
+</head>
+<body>	
+	<div class="keys">
+		<div data-key="65" class="key">
+			<kbd>A</kbd>
+			<span class="sound">Clap</span>
+		</div>
+		<div data-key="68" class="key">
+			<kbd>D</kbd>
+			<span class="sound">Kick</span>
+		</div>
+		<div data-key="83" class="key">
+			<kbd>S</kbd>
+			<span class="sound">HiHat</span>
+		</div>
+		<div data-key="70" class="key">
+			<kbd>F</kbd>
+			<span class="sound">OpenHat</span>
+		</div>
+		<div data-key="74" class="key">
+			<kbd>J</kbd>
+			<span class="sound">Snare</span>
+		</div>
+		<div data-key="75" class="key">
+			<kbd>K</kbd>
+			<span class="sound">Tom</span>
+		</div>
+		<div data-key="71" class="key">
+			<kbd>G</kbd>
+			<span class="sound">Boom</span>
+		</div>
+	</div>
+
+
+	<audio data-key="65" src="./sounds/clap.wav"></audio>
+	<audio data-key="83" src="./sounds/hihat.wav"></audio>
+	<audio data-key="68" src="./sounds/kick.wav"></audio>
+	<audio data-key="70" src="./sounds/openhat.wav"></audio>
+	<audio data-key="71" src="./sounds/boom.wav"></audio>
+	<audio data-key="74" src="./sounds/snare.wav"></audio>
+	<audio data-key="75" src="./sounds/tom.wav"></audio>
+	<audio data-key="71" src="./sounds/boom.wav"></audio>
+
+
+
+<script>
+
+	function playSound(e) {
+		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+		const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+		if (!audio) return; //stop the function from playing all together
+		audio.currentTime = 0 //rewind to the start
+		audio.play(); 
+		key.classList.add('playing');
+	}
+
+	function removeTransition(e) {
+		if(e.propertyName !== 'transform') return; //skip if not trensform
+		this.classList.remove('playing')
+	}
+
+	const keys = document.querySelectorAll('.key');
+	keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+	window.addEventListener('keydown', playSound);
+
+
+
+
+</script>
+</body>
+</html>
