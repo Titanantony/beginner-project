@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock</title>
+	<style>
+		body,html{
+			margin: 0px;
+			height: 100vh;
+			padding: 0px;
+			background: rgb(63,94,251);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			
+		}
+
+		.clock{
+			width: 300px;
+			height: 300px;
+			background-color: #eddcd8;
+			background-image: url(../pics/clock.png);
+			border: 15px solid black;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		.hand{
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			position: absolute;
+			bottom: 50%;
+			transform-origin: bottom center;
+			
+
+		}
+
+		
+		.hand.hour{
+			width: 13px;
+			height: 35%;
+			background-color: #080202;
+			transform: rotate(20deg);
+		}	
+
+		
+		.hand.minute{
+			width: 10px;
+			height: 45%;
+			background-color: #292626;
+			transform: rotate(180deg);
+			
+
+		}
+		.hand.second{
+			width: 5px;
+			height: 50%;
+			background-color: #f53646;
+			transition-timing-function: cubic-bezier(0.42, 0, 0.43, 1.78);
+ 
+			
+
+		}
+		.center{
+			height: 15px;
+			width: 15px;
+			background-color: #000;
+			border-radius: 50%;
+			z-index: 1;
+		}
+
+
+
+		
+	</style>
+</head>
+<body>
+	<div class="clock">
+		<div class="center"></div>
+		<div class="hand hour"></div>
+		<div class="hand minute"></div>
+		<div class="hand second"></div>
+	</div>
+
+
+
+	<script>
+
+		const secondHand = document.querySelector('.second');
+		const minuteHand = document.querySelector('.minute');
+		const hourHand = document.querySelector('.hour');
+
+		function setDate() {
+			const now = new Date();
+			const seconds = now.getSeconds();
+			const secondDegrees = (seconds*6);
+			secondHand.style.transform = `rotate(${secondDegrees}deg)`
+
+
+			const minutes = now.getMinutes();
+			const minuteDegrees = (minutes*6);
+			minuteHand.style.transform = `rotate(${minuteDegrees}deg)`
+
+
+			const hour = now.getHours();
+			const hourDegrees = (hour*30);
+			hourHand.style.transform = `rotate(${hourDegrees}deg)`
+		}
+		setInterval(setDate, 1000)
+
+		
+	</script>
+
+</body>
+</html>
